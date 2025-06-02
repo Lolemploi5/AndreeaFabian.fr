@@ -1,5 +1,23 @@
 # 📋 Changelog - Studio Fabian
 
+## [2.0.1] - 2 juin 2025
+
+### 🔧 Corrections
+
+#### 🚀 GitHub Actions
+- **Correction du workflow de déploiement** - Résolution de l'erreur "Write access to repository not granted"
+- **Mise à jour des permissions** avec `contents: read`, `pages: write`, `id-token: write`
+- **Migration vers `actions/deploy-pages@v4`** au lieu de `peaceiris/actions-gh-pages@v4`
+- **Configuration environnement** `github-pages` avec gestion de concurrence
+- **Guide de configuration** ajouté (`GITHUB_PAGES_SETUP.md`)
+
+#### 📚 Documentation
+- **README.md** mis à jour avec lien vers le site déployé
+- **Section déploiement** enrichie avec guide de configuration
+- **Documentation workflows** mise à jour avec nouvelles permissions
+
+---
+
 ## [2.0.0] - 2 juin 2025
 
 ### ✨ Nouvelles fonctionnalités

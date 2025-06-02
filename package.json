@@ -21,6 +21,7 @@
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
     "summary": "node scripts/test-summary.js",
-    "start:full": "node scripts/start-dev.js"
+    "start:full": "node scripts/start-dev.js",
+    "verify": "node scripts/verify-project.js"
   }
 }

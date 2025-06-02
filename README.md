@@ -265,15 +265,22 @@ Le projet utilise **GitHub Actions** pour l'intégration et le déploiement cont
 
 ## 🚀 **Déploiement**
 
+### Site en ligne
+Le site est automatiquement déployé sur GitHub Pages à chaque push sur `main` :
+👉 **[https://Lolemploi5.github.io/AndreeaFabian.fr](https://Lolemploi5.github.io/AndreeaFabian.fr)**
+
+### Configuration GitHub Pages
+Pour configurer le déploiement automatique, suivez le guide : [GITHUB_PAGES_SETUP.md](./GITHUB_PAGES_SETUP.md)
+
 ### Build de production
 ```bash
 npm run build
 ```
 
 ### Hébergement recommandé
+- **GitHub Pages** ✅ : Solution gratuite (configuré)
 - **Netlify** : Déploiement automatique
 - **Vercel** : Performance optimale
-- **GitHub Pages** : Solution gratuite
 - **Serveur classique** : Apache/Nginx
 
 ### Configuration serveur

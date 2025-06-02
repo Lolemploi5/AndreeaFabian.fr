@@ -38,8 +38,10 @@ Le projet **AndreeaFabian.fr** est maintenant **entièrement configuré** avec u
 ### 🚀 **GitHub Actions CI/CD**
 - ✅ **3 workflows** configurés (CI, Tests, Deploy)
 - ✅ **Badges de statut** fonctionnels
-- ✅ **Déploiement automatique** GitHub Pages
+- ✅ **Déploiement automatique** GitHub Pages (**CORRIGÉ** ✅)
 - ✅ **Tests automatiques** sur push/PR
+- ✅ **Permissions GitHub** configurées correctement
+- ✅ **Workflow deploy.yml** mis à jour avec `actions/deploy-pages@v4`
 
 ### 📚 **Documentation professionnelle**
 - ✅ **README.md** complet avec badges

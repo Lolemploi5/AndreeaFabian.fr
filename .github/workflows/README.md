@@ -22,10 +22,16 @@ Ce dossier contient les workflows d'intégration continue et de déploiement pou
 
 ### `deploy.yml` - Déploiement
 - **Déclenchement** : Push sur `main` uniquement
+- **Permissions** : `contents: read`, `pages: write`, `id-token: write`
 - **Actions** :
+  - Installation des dépendances
+  - Exécution des tests
   - Build de production
+  - Configuration GitHub Pages
+  - Upload des artefacts
   - Déploiement automatique sur GitHub Pages
-  - Notification de déploiement
+- **Environnement** : `github-pages`
+- **Concurrence** : Un seul déploiement à la fois
 
 ## 📊 Badges de statut
 
