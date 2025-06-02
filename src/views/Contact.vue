@@ -341,13 +341,63 @@ function handleSubmit() {
   margin-top: 1rem;
   font-weight: bold;
 }
-@media (max-width: 600px) {
+@media (max-width: 900px) {
+  .contact {
+    max-width: 98vw;
+    padding: 0 1vw;
+  }
   .contact-info {
+    max-width: 98vw;
     padding: 1.2rem 0.7rem 1.2rem 0.7rem;
     font-size: 1rem;
   }
   .info-label {
     min-width: 70px;
+    font-size: 0.98rem;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.98rem;
+  }
+  .contact-form button {
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .contact {
+    margin: 2rem auto 0 auto;
+    padding: 0 2vw;
+  }
+  .contact-info {
+    padding: 1rem 0.3rem 1rem 0.3rem;
+    font-size: 0.97rem;
+  }
+  .info-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+  .info-label {
+    min-width: 0;
+    font-size: 0.95rem;
+  }
+  .contact-form {
+    gap: 0.7rem;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+    padding: 0.5rem;
+  }
+  .contact-form button {
+    width: 100%;
+    padding: 0.8rem 0;
+    font-size: 1rem;
+  }
+  .notif-success {
+    font-size: 1rem;
+    padding: 0.7rem 1rem 1.2rem 1rem;
   }
 }
 </style>

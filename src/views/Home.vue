@@ -327,36 +327,41 @@ function goTo(idx) {
 .close-modal:hover {
   color: #c2b5a3;
 }
-@media (max-width: 600px) {
-  .natural-carousel {
-    width: 98vw;
-    height: 40vw;
-    min-width: 0;
-  }
-  .carousel-flex-track {
-    width: 60vw;
-    height: 40vw;
-  }
-  .carousel-img-wrapper.center {
-    width: 60vw;
-    height: 60vw;
-    min-width: 0;
-    min-height: 0;
-  }
-  .carousel-img-wrapper.left, .carousel-img-wrapper.right {
-    width: 20vw;
-    height: 28vw;
-  }
-}
 @media (max-width: 900px) {
+  .home-container {
+    padding: 0 1vw;
+  }
+  .intro {
+    margin: 2.5rem 0 2rem 0;
+  }
+  .tendances-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0 2rem 0;
+  }
+  .tendance-block {
+    width: 90vw;
+    max-width: 420px;
+    min-width: 0;
+    margin-bottom: 1.5rem;
+  }
+  .tendance-block img {
+    aspect-ratio: 1/1;
+    max-height: 220px;
+  }
+  .carousel-viewport,
   .simple-carousel {
     width: 98vw;
-    height: 60vw;
+    height: auto;
     min-width: 0;
+    margin: 1.5rem auto 1rem auto;
   }
   .carousel-img-container {
     width: 90vw;
     height: 50vw;
+    min-width: 0;
+    min-height: 0;
   }
   .carousel-img.main {
     width: 60vw;
@@ -369,24 +374,75 @@ function goTo(idx) {
     height: 28vw;
   }
 }
+@media (max-width: 600px) {
+  .intro h1 {
+    font-size: 1.1rem;
+  }
+  .tendances-row {
+    gap: 1.2rem;
+    margin: 1.2rem 0 1.2rem 0;
+  }
+  .tendance-block {
+    width: 98vw;
+    max-width: 98vw;
+    margin-bottom: 1rem;
+  }
+  .tendance-block img {
+    aspect-ratio: 1/1;
+    max-height: 140px;
+  }
+  .tendance-caption {
+    font-size: 0.98rem;
+    margin-top: 0.7rem;
+  }
+  .carousel-img-container {
+    width: 98vw;
+    height: 38vw;
+  }
+  .carousel-img.main {
+    width: 80vw;
+    height: 38vw;
+  }
+  .carousel-img.preview {
+    width: 14vw;
+    height: 18vw;
+  }
+  .carousel-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 1.1rem;
+    margin: 0 4px;
+  }
+  .carousel-dots {
+    margin-top: 0.5rem;
+  }
+}
 .tendances-row {
   display: flex;
   justify-content: center;
   gap: 3rem;
   margin: 2.5rem 0 2.5rem 0;
+  flex-wrap: wrap;
 }
 .tendance-block {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 320px;
+  min-width: 220px;
+  max-width: 95vw;
+  margin-bottom: 2rem;
 }
 .tendance-block img {
   width: 100%;
-  height: 320px;
+  height: auto;
+  aspect-ratio: 1/1;
   object-fit: cover;
+  object-position: top center;
   border-radius: 0;
   box-shadow: none;
+  max-width: 95vw;
+  max-height: 320px;
 }
 .tendance-caption {
   margin-top: 1.2rem;

@@ -100,4 +100,42 @@ hr {
 .contact-btn:hover {
   background: #a68b5b;
 }
+@media (max-width: 900px) {
+  .services {
+    margin-top: 2rem;
+    padding: 0 1vw;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  .engagements {
+    width: 100vw;
+    max-width: 100vw;
+    padding: 1.2rem 0.5rem;
+    box-sizing: border-box;
+  }
+  .accompagnements {
+    max-width: 100vw;
+    font-size: 0.98rem;
+  }
+}
+@media (max-width: 600px) {
+  .services {
+    margin-top: 1.2rem;
+    padding: 0 2vw;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  .engagements {
+    padding: 0.7rem 0.2rem;
+    width: 100vw;
+    max-width: 100vw;
+    font-size: 0.97rem;
+    box-sizing: border-box;
+  }
+  .accompagnements {
+    font-size: 0.95rem;
+    padding: 0;
+    max-width: 100vw;
+  }
+}
 </style>
