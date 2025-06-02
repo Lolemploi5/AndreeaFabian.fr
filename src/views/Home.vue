@@ -1,68 +1,70 @@
 <template>
-  <div class="home-container">
-    <section class="intro">
-      <h1>L’ART DE RÉLÉVER L’ÉLÉGANCE CACHÉE DE VOTRE INTÉRIEUR, AVEC JUSTESSE, DÉTAIL ET DISTINCTION.</h1>
-    </section>
+  <div class="page-content">
+    <div class="home-container">
+      <section class="intro">
+        <h1>L’ART DE RÉLÉVER L’ÉLÉGANCE CACHÉE DE VOTRE INTÉRIEUR, AVEC JUSTESSE, DÉTAIL ET DISTINCTION.</h1>
+      </section>
 
-    <section class="tendances">
-      <h2>TENDANCES ACTUELLE</h2>
-      <div class="section-hr"></div>
-      <div class="tendances-row">
-        <div class="tendance-block">
-          <img src="/tendance1.jpg" alt="Toilette suspendue" />
-          <div class="tendance-caption">Toilette suspendue</div>
+      <section class="tendances">
+        <h2>TENDANCES ACTUELLE</h2>
+        <div class="section-hr"></div>
+        <div class="tendances-row">
+          <div class="tendance-block">
+            <img src="/tendance1.jpg" alt="Toilette suspendue" />
+            <div class="tendance-caption">Toilette suspendue</div>
+          </div>
+          <div class="tendance-block">
+            <img src="/tendance2.jpg" alt="Parquet point de hongrie" />
+            <div class="tendance-caption">Parquet point de hongrie</div>
+          </div>
+          <div class="tendance-block">
+            <img src="/tendance3.jpg" alt="Verrière intérieure" />
+            <div class="tendance-caption">Verrière intérieure</div>
+          </div>
         </div>
-        <div class="tendance-block">
-          <img src="/tendance2.jpg" alt="Parquet point de hongrie" />
-          <div class="tendance-caption">Parquet point de hongrie</div>
-        </div>
-        <div class="tendance-block">
-          <img src="/tendance3.jpg" alt="Verrière intérieure" />
-          <div class="tendance-caption">Verrière intérieure</div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="realisations">
-      <h2>RÉALISATIONS</h2>
-      <div class="section-hr"></div>
-      <div class="carousel-viewport simple-carousel">
-        <button class="carousel-btn left-btn" @click="slide('left')">&#8592;</button>
-        <div class="carousel-img-container">
-          <img
-            :src="carouselImages[(currentIndex - 1 + carouselImages.length) % carouselImages.length]"
-            alt="Précédente"
-            class="carousel-img preview left-preview"
-          />
-          <transition :name="transitionName" mode="out-in">
+      <section class="realisations">
+        <h2>RÉALISATIONS</h2>
+        <div class="section-hr"></div>
+        <div class="carousel-viewport simple-carousel">
+          <button class="carousel-btn left-btn" @click="slide('left')">&#8592;</button>
+          <div class="carousel-img-container">
             <img
-              :src="carouselImages[currentIndex]"
-              :key="carouselImages[currentIndex] + '-' + currentIndex"
-              alt="Réalisation"
-              class="carousel-img main"
-              @click="openModal = true"
-              style="cursor: zoom-in;"
+              :src="carouselImages[(currentIndex - 1 + carouselImages.length) % carouselImages.length]"
+              alt="Précédente"
+              class="carousel-img preview left-preview"
             />
-          </transition>
-          <img
-            :src="carouselImages[(currentIndex + 1) % carouselImages.length]"
-            alt="Suivante"
-            class="carousel-img preview right-preview"
-          />
+            <transition :name="transitionName" mode="out-in">
+              <img
+                :src="carouselImages[currentIndex]"
+                :key="carouselImages[currentIndex] + '-' + currentIndex"
+                alt="Réalisation"
+                class="carousel-img main"
+                @click="openModal = true"
+                style="cursor: zoom-in;"
+              />
+            </transition>
+            <img
+              :src="carouselImages[(currentIndex + 1) % carouselImages.length]"
+              alt="Suivante"
+              class="carousel-img preview right-preview"
+            />
+          </div>
+          <button class="carousel-btn right-btn" @click="slide('right')">&#8594;</button>
         </div>
-        <button class="carousel-btn right-btn" @click="slide('right')">&#8594;</button>
-      </div>
-      <div v-if="openModal" class="modal-overlay" @click.self="openModal = false">
-        <div class="modal-content">
-          <img :src="carouselImages[currentIndex]" alt="Agrandissement" />
-          <button class="close-modal" @click="openModal = false">&times;</button>
+        <div v-if="openModal" class="modal-overlay" @click.self="openModal = false">
+          <div class="modal-content">
+            <img :src="carouselImages[currentIndex]" alt="Agrandissement" />
+            <button class="close-modal" @click="openModal = false">&times;</button>
+          </div>
         </div>
-      </div>
-      <div class="carousel-dots" v-if="carouselImages.length">
-        <span v-for="(img, idx) in carouselImages" :key="idx" class="dot" :class="{active: idx === currentIndex}" @click="goTo(idx)"></span>
-      </div>
-      <div v-else class="carousel-empty">Ajoutez vos images dans src/assets/carrousel/</div>
-    </section>
+        <div class="carousel-dots" v-if="carouselImages.length">
+          <span v-for="(img, idx) in carouselImages" :key="idx" class="dot" :class="{active: idx === currentIndex}" @click="goTo(idx)"></span>
+        </div>
+        <div v-else class="carousel-empty">Ajoutez vos images dans src/assets/carrousel/</div>
+      </section>
+    </div>
   </div>
 </template>
 
@@ -90,6 +92,9 @@ function goTo(idx) {
 </script>
 
 <style scoped>
+.page-content {
+  padding-bottom: 2.5rem;
+}
 .home-container {
   max-width: 1200px;
   margin: 0 auto;

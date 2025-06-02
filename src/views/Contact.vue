@@ -1,72 +1,74 @@
 <template>
-  <section class="contact">
-    <h2>CONTACT</h2>
-    <div class="section-hr"></div>
-    <form class="contact-form" @submit.prevent="handleSubmit">
-      <label for="name">Nom</label>
-      <input type="text" id="name" name="name" v-model="name" required />
+  <div class="page-content">
+    <section class="contact">
+      <h2>CONTACT</h2>
+      <div class="section-hr"></div>
+      <form class="contact-form" @submit.prevent="handleSubmit">
+        <label for="name">Nom</label>
+        <input type="text" id="name" name="name" v-model="name" required />
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" v-model="email" required />
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" v-model="email" required />
 
-      <label for="phone">Téléphone</label>
-      <input type="tel" id="phone" name="phone" v-model="phone" required />
+        <label for="phone">Téléphone</label>
+        <input type="tel" id="phone" name="phone" v-model="phone" required />
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" v-model="message" required></textarea>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" v-model="message" required></textarea>
 
-      <button type="submit" :disabled="sending" :class="{ sent: sent }">
-        <span v-if="!sent && !sending">Envoyer</span>
-        <span v-if="sending">Envoi...</span>
-        <span v-if="sent" class="checkmark">✔️ Envoyé</span>
-      </button>
-    </form>
-    <transition name="notif-fade">
-      <div v-if="sent" class="notif-success">
-        <span class="notif-icon">✅</span>
-        Message envoyé avec succès !
-        <div class="notif-bar">
-          <div class="notif-bar-inner" :style="{ width: notifBarWidth + '%' }"></div>
+        <button type="submit" :disabled="sending" :class="{ sent: sent }">
+          <span v-if="!sent && !sending">Envoyer</span>
+          <span v-if="sending">Envoi...</span>
+          <span v-if="sent" class="checkmark">✔️ Envoyé</span>
+        </button>
+      </form>
+      <transition name="notif-fade">
+        <div v-if="sent" class="notif-success">
+          <span class="notif-icon">✅</span>
+          Message envoyé avec succès !
+          <div class="notif-bar">
+            <div class="notif-bar-inner" :style="{ width: notifBarWidth + '%' }"></div>
+          </div>
+        </div>
+      </transition>
+      <div class="contact-info">
+        <div class="info-row">
+          <span class="icon mail-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4V4zm0 0l8 8 8-8" stroke="#c2b5a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="info-label">Email :</span>
+          <a href="mailto:Andreea.fabian@hotmail.com" class="info-value">andreea.fabian@hotmail.com</a>
+        </div>
+        <div class="info-row">
+          <span class="icon phone-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.49 2.53.76 3.88.76a1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.35.27 2.67.76 3.88a1 1 0 01-.21 1.11l-2.2 2.2z" stroke="#c2b5a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="info-label">Téléphone :</span>
+          <a href="tel:0698260446" class="info-value">06 98 26 04 46</a>
+        </div>
+        <div class="info-row instagram-row">
+          <span class="icon insta-icon">
+            <svg viewBox="0 0 50 50" width="22" height="22" fill="none">
+              <defs>
+                <radialGradient id="ig-gradient" cx="50%" cy="50%" r="80%">
+                  <stop offset="0%" stop-color="#f9ce34"/>
+                  <stop offset="50%" stop-color="#ee2a7b"/>
+                  <stop offset="100%" stop-color="#6228d7"/>
+                </radialGradient>
+              </defs>
+              <rect x="5" y="5" width="40" height="40" rx="12" fill="url(#ig-gradient)"/>
+              <circle cx="25" cy="25" r="10" stroke="#fff" stroke-width="3" fill="none"/>
+              <circle cx="34" cy="16" r="2.5" fill="#fff"/>
+            </svg>
+          </span>
+          <span class="info-label">Instagram :</span>
+          <a href="https://www.instagram.com/studio.fabian/" target="_blank" rel="noopener" class="info-value insta-link" @mouseover="instaAnim = true" @mouseleave="instaAnim = false">
+            <span :class="['insta-text', { 'insta-anim': instaAnim }]">@studio.fabian</span>
+          </a>
         </div>
       </div>
-    </transition>
-    <div class="contact-info">
-      <div class="info-row">
-        <span class="icon mail-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4V4zm0 0l8 8 8-8" stroke="#c2b5a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
-        <span class="info-label">Email :</span>
-        <a href="mailto:Andreea.fabian@hotmail.com" class="info-value">andreea.fabian@hotmail.com</a>
-      </div>
-      <div class="info-row">
-        <span class="icon phone-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.49 2.53.76 3.88.76a1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.35.27 2.67.76 3.88a1 1 0 01-.21 1.11l-2.2 2.2z" stroke="#c2b5a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
-        <span class="info-label">Téléphone :</span>
-        <a href="tel:0698260446" class="info-value">06 98 26 04 46</a>
-      </div>
-      <div class="info-row instagram-row">
-        <span class="icon insta-icon">
-          <svg viewBox="0 0 50 50" width="22" height="22" fill="none">
-            <defs>
-              <radialGradient id="ig-gradient" cx="50%" cy="50%" r="80%">
-                <stop offset="0%" stop-color="#f9ce34"/>
-                <stop offset="50%" stop-color="#ee2a7b"/>
-                <stop offset="100%" stop-color="#6228d7"/>
-              </radialGradient>
-            </defs>
-            <rect x="5" y="5" width="40" height="40" rx="12" fill="url(#ig-gradient)"/>
-            <circle cx="25" cy="25" r="10" stroke="#fff" stroke-width="3" fill="none"/>
-            <circle cx="34" cy="16" r="2.5" fill="#fff"/>
-          </svg>
-        </span>
-        <span class="info-label">Instagram :</span>
-        <a href="https://www.instagram.com/studio.fabian/" target="_blank" rel="noopener" class="info-value insta-link" @mouseover="instaAnim = true" @mouseleave="instaAnim = false">
-          <span :class="['insta-text', { 'insta-anim': instaAnim }]">@studio.fabian</span>
-        </a>
-      </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
 
 <script setup>
@@ -161,6 +163,9 @@ function handleSubmit() {
 </script>
 
 <style scoped>
+.page-content {
+  padding-bottom: 2.5rem;
+}
 .contact {
   max-width: 500px;
   margin: 4rem auto 0 auto;
