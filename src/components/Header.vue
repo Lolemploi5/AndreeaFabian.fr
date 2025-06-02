@@ -13,6 +13,7 @@
     <div class="nav" v-if="!isMobile">
       <router-link to="/" class="nav-btn">Accueil</router-link>
       <router-link to="/services" class="nav-btn">Services</router-link>
+      <router-link to="/realisations" class="nav-btn">Réalisations</router-link>
       <router-link to="/contact" class="nav-btn">Contact</router-link>
     </div>
     <button class="burger" @click="burgerOpen = true" aria-label="Ouvrir le menu" v-if="isMobile && !burgerOpen">
@@ -32,6 +33,7 @@
         </button>
         <router-link to="/" class="nav-btn" @click="burgerOpen = false">Accueil</router-link>
         <router-link to="/services" class="nav-btn" @click="burgerOpen = false">Services</router-link>
+        <router-link to="/realisations" class="nav-btn" @click="burgerOpen = false">Réalisations</router-link>
         <router-link to="/contact" class="nav-btn" @click="burgerOpen = false">Contact</router-link>
       </nav>
     </transition>
