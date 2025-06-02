@@ -61,8 +61,8 @@
           </svg>
         </span>
         <span class="info-label">Instagram :</span>
-        <a href="https://www.instagram.com/_andreeaf__/" target="_blank" rel="noopener" class="info-value insta-link" @mouseover="instaAnim = true" @mouseleave="instaAnim = false">
-          <span :class="['insta-text', { 'insta-anim': instaAnim }]">@_andreeaf__</span>
+        <a href="https://www.instagram.com/studio.fabian/" target="_blank" rel="noopener" class="info-value insta-link" @mouseover="instaAnim = true" @mouseleave="instaAnim = false">
+          <span :class="['insta-text', { 'insta-anim': instaAnim }]">@studio.fabian</span>
         </a>
       </div>
     </div>
