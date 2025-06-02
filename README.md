@@ -4,10 +4,12 @@
 
 ## 📊 **Statut du projet**
 
-![Build Status](https://github.com/Lolemploi5/AndreeaFabian.fr/workflows/CI/badge.svg)
-![Tests](https://github.com/Lolemploi5/AndreeaFabian.fr/workflows/Tests/badge.svg)
-![Deployment](https://github.com/Lolemploi5/AndreeaFabian.fr/workflows/Deploy/badge.svg)
+[![CI](https://github.com/Lolemploi5/AndreeaFabian.fr/actions/workflows/ci.yml/badge.svg)](https://github.com/Lolemploi5/AndreeaFabian.fr/actions/workflows/ci.yml)
+[![Tests](https://github.com/Lolemploi5/AndreeaFabian.fr/actions/workflows/tests.yml/badge.svg)](https://github.com/Lolemploi5/AndreeaFabian.fr/actions/workflows/tests.yml)
+[![Deploy](https://github.com/Lolemploi5/AndreeaFabian.fr/actions/workflows/deploy.yml/badge.svg)](https://github.com/Lolemploi5/AndreeaFabian.fr/actions/workflows/deploy.yml)
 [![codecov](https://codecov.io/gh/Lolemploi5/AndreeaFabian.fr/branch/main/graph/badge.svg)](https://codecov.io/gh/Lolemploi5/AndreeaFabian.fr)
+[![Coverage](https://img.shields.io/badge/coverage-43.6%25-yellow.svg)](./coverage/index.html)
+[![Tests](https://img.shields.io/badge/tests-28%20passed-brightgreen.svg)](./__tests__)
 
 ---
 
@@ -110,9 +112,16 @@ VITE_TELEGRAM_CHAT_ID=your_chat_id_here
 ### Scripts disponibles
 
 ```bash
+# 🚀 Développement
 npm run dev     # Mode développement avec hot-reload
-npm run build   # Build de production
+npm run build   # Build de production optimisé
 npm run preview # Aperçu du build local
+
+# 🧪 Tests
+npm run test          # Tests unitaires en mode watch
+npm run test:run      # Exécution unique des tests
+npm run test:ui       # Interface graphique interactive pour les tests
+npm run test:coverage # Rapport de couverture de code détaillé
 ```
 
 ---
@@ -203,10 +212,12 @@ Le site s'adapte parfaitement à tous les écrans :
 - **Assets** optimisés
 
 ### Tests et qualité
-- **Vitest** pour les tests unitaires
-- **17 tests** couvrant tous les composants
+
+- **Vitest** pour les tests unitaires avec interface UI
+- **28 tests** couvrant tous les composants (52.6% de couverture)
+- **Interface graphique** interactive pour les tests (`npm run test:ui`)
+- **Couverture de code** détaillée avec v8 provider
 - **GitHub Actions** pour l'intégration continue
-- **Couverture de code** avec Codecov
 
 ---
 
@@ -245,9 +256,9 @@ Le projet utilise **GitHub Actions** pour l'intégration et le déploiement cont
 
 ### Badges de statut
 
-- ![Build Status](https://github.com/Lolemploi5/AndreeaFabian.fr/workflows/CI/badge.svg) - Statut du build
-- ![Tests](https://github.com/Lolemploi5/AndreeaFabian.fr/workflows/Tests/badge.svg) - Résultats des tests
-- ![Deployment](https://github.com/Lolemploi5/AndreeaFabian.fr/workflows/Deploy/badge.svg) - Statut du déploiement
+- [![CI](https://github.com/Lolemploi5/AndreeaFabian.fr/actions/workflows/ci.yml/badge.svg)](https://github.com/Lolemploi5/AndreeaFabian.fr/actions/workflows/ci.yml) - Statut du build et des tests
+- [![Tests](https://github.com/Lolemploi5/AndreeaFabian.fr/actions/workflows/tests.yml/badge.svg)](https://github.com/Lolemploi5/AndreeaFabian.fr/actions/workflows/tests.yml) - Résultats des tests unitaires
+- [![Deploy](https://github.com/Lolemploi5/AndreeaFabian.fr/actions/workflows/deploy.yml/badge.svg)](https://github.com/Lolemploi5/AndreeaFabian.fr/actions/workflows/deploy.yml) - Statut du déploiement
 - [![codecov](https://codecov.io/gh/Lolemploi5/AndreeaFabian.fr/branch/main/graph/badge.svg)](https://codecov.io/gh/Lolemploi5/AndreeaFabian.fr) - Couverture de code
 
 ---
