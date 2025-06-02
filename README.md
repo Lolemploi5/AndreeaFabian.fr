@@ -2,6 +2,13 @@
 
 🏠 **Site web professionnel pour Studio Fabian, architecte d'intérieur spécialisée dans la création d'espaces élégants et sur-mesure.**
 
+## 📊 **Statut du projet**
+
+![Build Status](https://github.com/Lolemploi5/AndreeaFabian.fr/workflows/CI/badge.svg)
+![Tests](https://github.com/Lolemploi5/AndreeaFabian.fr/workflows/Tests/badge.svg)
+![Deployment](https://github.com/Lolemploi5/AndreeaFabian.fr/workflows/Deploy/badge.svg)
+[![codecov](https://codecov.io/gh/Lolemploi5/AndreeaFabian.fr/branch/main/graph/badge.svg)](https://codecov.io/gh/Lolemploi5/AndreeaFabian.fr)
+
 ---
 
 ## 📋 **Description**
@@ -194,6 +201,54 @@ Le site s'adapte parfaitement à tous les écrans :
 - **Tree-shaking** automatique
 - **Code splitting** par route
 - **Assets** optimisés
+
+### Tests et qualité
+- **Vitest** pour les tests unitaires
+- **17 tests** couvrant tous les composants
+- **GitHub Actions** pour l'intégration continue
+- **Couverture de code** avec Codecov
+
+---
+
+## 🚀 **CI/CD et GitHub Actions**
+
+### Workflows automatisés
+
+Le projet utilise **GitHub Actions** pour l'intégration et le déploiement continus :
+
+#### 🔧 **CI - Intégration Continue**
+```yaml
+# .github/workflows/ci.yml
+- Tests unitaires automatiques (Vitest)
+- Vérification de la qualité du code
+- Build de production
+- Validation des performances
+```
+
+#### 🧪 **Tests**
+```yaml
+# .github/workflows/tests.yml
+- Exécution de la suite de tests
+- Couverture de code
+- Tests de régression
+- Validation multi-navigateurs
+```
+
+#### 🚀 **Déploiement**
+```yaml
+# .github/workflows/deploy.yml
+- Build automatique sur push
+- Déploiement sur la branche gh-pages
+- Mise à jour des environnements
+- Notifications de déploiement
+```
+
+### Badges de statut
+
+- ![Build Status](https://github.com/Lolemploi5/AndreeaFabian.fr/workflows/CI/badge.svg) - Statut du build
+- ![Tests](https://github.com/Lolemploi5/AndreeaFabian.fr/workflows/Tests/badge.svg) - Résultats des tests
+- ![Deployment](https://github.com/Lolemploi5/AndreeaFabian.fr/workflows/Deploy/badge.svg) - Statut du déploiement
+- [![codecov](https://codecov.io/gh/Lolemploi5/AndreeaFabian.fr/branch/main/graph/badge.svg)](https://codecov.io/gh/Lolemploi5/AndreeaFabian.fr) - Couverture de code
 
 ---
 
