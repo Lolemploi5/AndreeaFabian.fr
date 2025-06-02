@@ -1,5 +1,6 @@
 <template>
-  <header class="header">
+  <div class="header-wrapper">
+    <header class="header">
     <div class="header-left">
       <router-link to="/">
         <img src="/logo.jpg" alt="Logo" class="logo" />
@@ -38,8 +39,9 @@
       </nav>
     </transition>
     <div v-if="burgerOpen && isMobile" class="nav-mobile-overlay" @click="burgerOpen = false"></div>
-  </header>
-  <div class="header-underline"></div>
+    </header>
+    <div class="header-underline"></div>
+  </div>
 </template>
 
 <script setup>
@@ -59,13 +61,22 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+.header-wrapper {
+  width: 100%;
+  background: #f8f5f1;
+  position: relative;
+  z-index: 1000;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 2.5rem 0 1.5rem 0;
+  padding: 2.5rem 2rem 1.5rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  background: transparent;
 }
 .header-left {
   display: flex;
@@ -135,9 +146,9 @@ onUnmounted(() => {
   background: #b3a18a;
 }
 .header-underline {
-  width: 100vw;
+  width: 100%;
   height: 2px;
-  background: #e7d8f6;
+  background: #c2b5a3;
   margin-bottom: 2.5rem;
 }
 .burger {
@@ -175,8 +186,7 @@ onUnmounted(() => {
   .header {
     flex-direction: column;
     align-items: center;
-    padding: 1.5rem 0 1rem 0;
-    max-width: 100vw;
+    padding: 1.5rem 1rem 1rem 1rem;
   }
   .header-left {
     flex-direction: column;
