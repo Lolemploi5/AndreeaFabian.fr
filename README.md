@@ -373,7 +373,7 @@ copies or substantial portions of the Software.
 **© 2025 Andreea Fabian - Architecte d'Intérieur**
 
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Lolemploi5/AndreeaFabian.fr)
-[![Website](https://img.shields.io/badge/Website-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://studio-fabian.fr)
+[![Website](https://img.shields.io/badge/Website-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://andreeafabian.fr)
 
 *Dernière mise à jour : Juin 2025*
 
