@@ -4,22 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Andreea Fabian</title>
-    <link rel="icon" type="image/png" href="./logo.jpg" />
-    <script>
-      // Handle GitHub Pages SPA routing
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = sessionStorage.redirect || l.search.slice(1);
-          if (decoded) {
-            sessionStorage.redirect = '';
-            l.replace(l.pathname.split('/').slice(0, -1).join('/') + '/' + decoded);
-          }
-        }
-      }(window.location))
-    </script>
+    <link rel="icon" type="image/png" href="/logo.jpg" />
   </head>
   <body>
     <div id="app"></div>
-    <script type="module" src="./src/main.js"></script>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
