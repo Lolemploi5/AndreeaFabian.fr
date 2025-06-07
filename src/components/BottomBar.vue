@@ -39,21 +39,24 @@
 
 <style scoped>
 .bottom-bar {
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
   background: linear-gradient(90deg, #f8f5f1 60%, #e7d8f6 100%);
   border-top: 2px solid #bfa77a;
   color: #222;
   font-family: 'Inter', Arial, sans-serif;
   box-shadow: 0 -2px 16px 0 rgba(194,181,163,0.10);
   padding-top: 0.2rem;
+  box-sizing: border-box;
 }
 .bottom-bar-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0.7rem 2vw 0.3rem 2vw;
+  padding: 0.7rem 2rem 0.3rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
 }
 .bottom-bar-row {
   display: flex;

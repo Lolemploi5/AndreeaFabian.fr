@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Plan du site
+Sitemap: https://andreea-fabian.fr/sitemap.xml
+
+# Empêcher l'indexation des fichiers de développement
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: *.map
+Disallow: /coverage/

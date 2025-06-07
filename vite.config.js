@@ -3,6 +3,15 @@ import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
   plugins: [vue()],
+  build: {
+    rollupOptions: {
+      input: {
+        main: './index.html'
+      }
+    },
+    assetsDir: 'assets',
+    copyPublicDir: true
+  },
   test: {
     globals: true,
     environment: 'jsdom',

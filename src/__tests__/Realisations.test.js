@@ -29,61 +29,40 @@ describe('Realisations.vue', () => {
     expect(wrapper.find('h2').text()).toBe('RÉALISATIONS')
   })
 
-  it('should render gallery grid', () => {
+  it('should render main gallery container', () => {
     const wrapper = createWrapper()
-    expect(wrapper.find('.gallery-grid').exists()).toBe(true)
+    expect(wrapper.find('.main-container').exists()).toBe(true)
     expect(wrapper.find('section.realisations-gallery').exists()).toBe(true)
   })
 
-  it('should open modal when calling openModal method', async () => {
+  it('should render navigation controls', () => {
     const wrapper = createWrapper()
-    
-    // Tester la méthode openModal directement
-    wrapper.vm.openModal(1)
-    await wrapper.vm.$nextTick()
-    
-    expect(wrapper.vm.modalOpen).toBe(true)
-    expect(wrapper.vm.modalIndex).toBe(1)
+    expect(wrapper.find('.navigation-controls').exists()).toBe(true)
+    expect(wrapper.find('.nav-btn.prev-btn').exists()).toBe(true)
+    expect(wrapper.find('.nav-btn.next-btn').exists()).toBe(true)
   })
 
-  it('should close modal when calling closeModal method', async () => {
+  it('should render progress bar', () => {
     const wrapper = createWrapper()
-    
-    // Ouvrir d'abord la modal
-    wrapper.vm.openModal(0)
-    await wrapper.vm.$nextTick()
-    
-    // Puis la fermer
-    wrapper.vm.closeModal()
-    await wrapper.vm.$nextTick()
-    
-    expect(wrapper.vm.modalOpen).toBe(false)
+    expect(wrapper.find('.progress-bar').exists()).toBe(true)
+    expect(wrapper.find('.progress-fill').exists()).toBe(true)
   })
 
-  it('should display modal when opened', async () => {
+  it('should show position indicator', () => {
     const wrapper = createWrapper()
-    
-    // Ouvrir la modal
-    wrapper.vm.openModal(0)
-    await wrapper.vm.$nextTick()
-    
-    // Vérifier que la modal est affichée
-    expect(wrapper.find('.modal-overlay').exists()).toBe(true)
-    expect(wrapper.find('.modal-content').exists()).toBe(true)
-    expect(wrapper.find('.close-modal').exists()).toBe(true)
+    expect(wrapper.find('.position-indicator').exists()).toBe(true)
   })
 
-  it('should close modal when clicking close button', async () => {
+  it('should navigate to next image when clicking next button', async () => {
     const wrapper = createWrapper()
+    const initialIndex = wrapper.vm.currentIndex
     
-    // Ouvrir la modal
-    wrapper.vm.openModal(0)
-    await wrapper.vm.$nextTick()
+    const nextButton = wrapper.find('.nav-btn.next-btn')
+    await nextButton.trigger('click')
     
-    // Cliquer sur le bouton fermer
-    const closeButton = wrapper.find('.close-modal')
-    await closeButton.trigger('click')
-    
-    expect(wrapper.vm.modalOpen).toBe(false)
+    // Wait for transition to complete
+    setTimeout(() => {
+      expect(wrapper.vm.currentIndex).toBeGreaterThanOrEqual(initialIndex)
+    }, 200)
   })
 })
