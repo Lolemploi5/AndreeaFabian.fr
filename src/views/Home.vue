@@ -2,7 +2,7 @@
   <div class="page-content">
     <div class="home-container">
       <section class="intro">
-        <h1>L’ART DE RÉLÉVER L’ÉLÉGANCE CACHÉE DE VOTRE INTÉRIEUR, AVEC JUSTESSE, DÉTAIL ET DISTINCTION.</h1>
+        <h1>L’ART DE RÉLÉVER L’ÉLÉGANCE CACHÉE DE VOTRE INTÉRIEUR, AVEC JUSTESSE, DÉTAIL ET MODERNITÉ.</h1>
       </section>
 
       <section class="tendances">
