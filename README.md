@@ -9,7 +9,7 @@
 <!-- Badges de statut -->
 [![Build Status](https://img.shields.io/github/actions/workflow/status/Lolemploi5/AndreeaFabian.fr/ci.yml?branch=main&style=flat-square&logo=github&label=Build)](https://github.com/Lolemploi5/AndreeaFabian.fr/actions)
 [![Tests](https://img.shields.io/badge/tests-28%20passed-brightgreen?style=flat-square&logo=vitest)](https://github.com/Lolemploi5/AndreeaFabian.fr/actions)
-[![Coverage](https://img.shields.io/badge/coverage-36%25-orange?style=flat-square&logo=codecov)](./coverage/index.html)
+[![Coverage](https://img.shields.io/badge/coverage-%25-orange?style=flat-square&logo=codecov)](./coverage/index.html)
 [![Deploy](https://img.shields.io/badge/deploy-ready-brightgreen?style=flat-square&logo=rocket&label=Deploy)](https://andreeafabian.fr)
 
 <!-- Badges technologiques -->
