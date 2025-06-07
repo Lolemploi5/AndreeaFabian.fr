@@ -54,7 +54,8 @@
       
       <!-- Instructions -->
       <div class="instructions">
-        <p>Utilisez la molette, les flèches ↑↓ ou les boutons pour naviguer</p>
+        <p class="desktop-instructions">Utilisez la molette, les flèches ↑↓ ou les boutons pour naviguer</p>
+        <p class="mobile-instructions">Utilisez les boutons pour naviguer</p>
       </div>
     </div>
   </section>
@@ -163,7 +164,13 @@ function onImageLoad() {
 .realisations-gallery {
   min-height: 100vh;
   background: #f8f5f1;
-  padding: 2rem 0;
+  padding: 2rem 0 0 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .gallery-header {
@@ -197,13 +204,17 @@ function onImageLoad() {
   max-width: none;
   margin: 0 auto;
   padding: 2rem;
-  min-height: calc(100vh - 200px);
+  min-height: calc(100vh - 280px);
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   position: relative;
   outline: none;
-  overflow: auto;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  flex: 1;
 }
 
 .current-slide {
@@ -212,7 +223,8 @@ function onImageLoad() {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: auto;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .slide-content {
@@ -224,6 +236,8 @@ function onImageLoad() {
   overflow: hidden;
   transition: transform 0.3s ease;
   padding: 20px;
+  max-width: calc(100% - 40px);
+  box-sizing: border-box;
 }
 
 .slide-content:hover {
@@ -234,12 +248,12 @@ function onImageLoad() {
   display: block;
   width: auto;
   height: auto;
-  max-width: 90vw;
-  max-height: 80vh;
+  max-width: calc(100% - 40px);
+  max-height: 70vh;
   object-fit: contain;
   border-radius: 15px;
   transition: all 0.3s ease;
-  /* Taille adaptée à l'écran tout en gardant les proportions */
+  box-sizing: border-box;
 }
 
 .navigation-controls {
@@ -324,6 +338,8 @@ function onImageLoad() {
   border-radius: 20px;
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 15px rgba(194, 181, 163, 0.15);
+  max-width: calc(100% - 2rem);
+  box-sizing: border-box;
 }
 
 .instructions p {
@@ -333,25 +349,38 @@ function onImageLoad() {
   text-align: center;
 }
 
+.mobile-instructions {
+  display: none;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
+  .realisations-gallery {
+    padding: 1rem 0;
+  }
+  
   .main-container {
-    padding: 1rem;
+    padding: 1rem 0.5rem;
+    min-height: calc(100vh - 150px);
+  }
+  
+  .slide-content {
+    padding: 15px;
+    margin: 0 0.5rem;
   }
   
   .slide-content img {
-    /* Images adaptées aux écrans moyens */
-    max-width: 85vw;
-    max-height: 70vh;
+    max-width: calc(100% - 20px);
+    max-height: 65vh;
     object-fit: contain;
   }
   
   .navigation-controls {
-    right: 1rem;
+    right: 0.5rem;
   }
   
   .progress-bar {
-    left: 1rem;
+    left: 0.5rem;
     height: 150px;
   }
   
@@ -360,11 +389,29 @@ function onImageLoad() {
     height: 45px;
     font-size: 1.3rem;
   }
+  
+  .instructions {
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: calc(100% - 2rem);
+    box-sizing: border-box;
+  }
 }
 
 @media (max-width: 600px) {
+  .realisations-gallery {
+    padding: 0.5rem 0;
+  }
+  
+  .gallery-header {
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+  }
+  
   .gallery-header h2 {
     font-size: 1.1rem;
+    margin-bottom: 0.5rem;
   }
   
   .position-indicator {
@@ -373,18 +420,25 @@ function onImageLoad() {
   }
   
   .main-container {
-    padding: 0.5rem;
+    padding: 0.5rem 0.25rem;
+    min-height: calc(100vh - 120px);
+  }
+  
+  .slide-content {
+    padding: 10px;
+    margin: 0 0.25rem;
+    border-radius: 15px;
   }
   
   .slide-content img {
-    /* Images adaptées aux petits écrans */
-    max-width: 90vw;
-    max-height: 60vh;
+    max-width: calc(100% - 10px);
+    max-height: 55vh;
     object-fit: contain;
+    border-radius: 10px;
   }
   
   .navigation-controls {
-    right: 0.5rem;
+    right: 0.25rem;
   }
   
   .nav-btn {
@@ -394,17 +448,71 @@ function onImageLoad() {
   }
   
   .progress-bar {
-    left: 0.5rem;
+    left: 0.25rem;
     height: 120px;
+    width: 3px;
   }
   
   .instructions {
-    bottom: 1rem;
-    padding: 0.6rem 1rem;
+    bottom: 0.5rem;
+    padding: 0.5rem 0.8rem;
+    max-width: calc(100% - 1rem);
+    font-size: 0.7rem;
   }
   
   .instructions p {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
+    margin: 0;
+  }
+  
+  .desktop-instructions {
+    display: none;
+  }
+  
+  .mobile-instructions {
+    display: block;
+  }
+}
+
+@media (max-width: 400px) {
+  .main-container {
+    padding: 0.25rem;
+  }
+  
+  .slide-content {
+    padding: 8px;
+    margin: 0;
+  }
+  
+  .slide-content img {
+    max-width: calc(100% - 5px);
+    max-height: 50vh;
+  }
+  
+  .navigation-controls {
+    right: 0.1rem;
+  }
+  
+  .nav-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1.1rem;
+  }
+  
+  .progress-bar {
+    left: 0.1rem;
+    height: 100px;
+    width: 2px;
+  }
+  
+  .instructions {
+    bottom: 0.25rem;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.65rem;
+  }
+  
+  .instructions p {
+    font-size: 0.65rem;
   }
 }
 

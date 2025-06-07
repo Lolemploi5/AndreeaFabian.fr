@@ -1,0 +1,145 @@
+# Configuration pour SPA Vue.js - AndreeaFabian.fr
+# Gère le routing côté client et redirige toutes les routes vers index.html
+
+RewriteEngine On
+
+# Activer le suivi des liens symboliques
+Options +FollowSymLinks
+
+# Désactiver l'affichage des répertoires
+Options -Indexes
+
+# Configuration des erreurs personnalisées
+ErrorDocument 404 /index.html
+
+# Gestion spéciale des favicons - priorité absolue
+RewriteRule ^favicon\.ico$ favicon.ico [L]
+RewriteRule ^apple-touch-icon.*\.png$ - [L]
+
+# Gestion des fichiers robots.txt et sitemap.xml
+RewriteRule ^robots\.txt$ robots.txt [L]
+RewriteRule ^sitemap\.xml$ sitemap.xml [L]
+
+# Ignorer les fichiers et dossiers existants (assets, images, CSS, JS, etc.)
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Ignorer les requêtes AJAX et API
+RewriteCond %{HTTP_X_REQUESTED_WITH} ^XMLHttpRequest$ [OR]
+RewriteCond %{REQUEST_URI} ^/api/
+RewriteRule ^ - [L]
+
+# Redirection de toutes les autres requêtes vers index.html pour le routing Vue.js
+# Ceci permet à Vue Router de gérer les routes comme /services, /realisations, etc.
+RewriteRule ^.*$ index.html [QSA,L]
+
+# Configuration du cache pour optimiser les performances
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Favicons - cache long
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType image/vnd.microsoft.icon "access plus 1 year"
+    
+    # Images - cache moyen
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    
+    # Assets JS/CSS - cache long car ils ont un hash de version
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType application/x-javascript "access plus 1 year"
+    
+    # Polices
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    
+    # HTML - cache court
+    ExpiresByType text/html "access plus 1 hour"
+    
+    # JSON et XML
+    ExpiresByType application/json "access plus 1 hour"
+    ExpiresByType application/xml "access plus 1 hour"
+    ExpiresByType text/xml "access plus 1 hour"
+</IfModule>
+
+# Configuration des en-têtes de cache
+<IfModule mod_headers.c>
+    # Cache long pour les assets avec hash
+    <FilesMatch "\.(css|js|woff|woff2|eot|ttf|otf)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    
+    # Cache moyen pour les images
+    <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+    
+    # Pas de cache pour HTML
+    <FilesMatch "\.html$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
+    </FilesMatch>
+    
+    # Sécurité
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Configuration des types MIME
+<IfModule mod_mime.c>
+    # Favicons
+    AddType image/x-icon .ico
+    AddType image/vnd.microsoft.icon .ico
+    
+    # Polices web
+    AddType font/woff .woff
+    AddType font/woff2 .woff2
+    AddType application/font-woff .woff
+    AddType application/font-woff2 .woff2
+    
+    # Autres types
+    AddType application/javascript .js
+    AddType text/css .css
+    AddType image/svg+xml .svg
+</IfModule>
+
+# Compression gzip pour améliorer les performances
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# Protection contre l'accès direct aux fichiers sensibles
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|inc|bak|backup|swp|tmp)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Prévention de l'affichage des erreurs PHP en production
+<IfModule mod_php.c>
+    php_flag display_startup_errors off
+    php_flag display_errors off
+    php_flag html_errors off
+    php_value docref_root 0
+    php_value docref_ext 0
+</IfModule>

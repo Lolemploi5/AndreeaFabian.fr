@@ -7,6 +7,8 @@ echo "🔨 Construction de la version de production..."
 npm run build
 
 echo "📁 Préparation des fichiers pour le déploiement..."
+echo "📄 Copie du fichier .htaccess..."
+cp .htaccess dist/
 echo "Fichiers prêts dans le dossier 'dist/'"
 echo ""
 echo "📋 Fichiers à transférer via SFTP :"
