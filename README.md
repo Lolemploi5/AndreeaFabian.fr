@@ -339,6 +339,18 @@ Le header mobile a été complètement refactorisé avec :
 - 🐛 **Bug Report** : [Issues GitHub](https://github.com/Lolemploi5/AndreeaFabian.fr/issues)
 - 💬 **Questions** : Créez une discussion
 
+### 💖 Supportez le Développeur
+
+Si ce projet vous aide ou vous plaît, considérez soutenir le développement :
+
+<div align="center">
+
+[![Sponsor](https://img.shields.io/badge/♥️%20Sponsor-GitHub%20Sponsors-ea4aaa?style=for-the-badge&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/Lolemploi5)
+
+**Votre soutien aide à maintenir et améliorer ce projet ! 🚀**
+
+</div>
+
 ### 👩‍💼 Contact Professionnel
 
 - **Andreea Fabian** - Architecte d'Intérieur
@@ -348,7 +360,7 @@ Le header mobile a été complètement refactorisé avec :
 
 ## 📄 Licence
 
-```
+```text
 MIT License
 
 Copyright (c) 2025 Studio Fabian
@@ -374,6 +386,7 @@ copies or substantial portions of the Software.
 
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Lolemploi5/AndreeaFabian.fr)
 [![Website](https://img.shields.io/badge/Website-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://andreeafabian.fr)
+[![Sponsor](https://img.shields.io/badge/♥️%20Sponsor-GitHub%20Sponsors-ea4aaa?style=for-the-badge&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/Lolemploi5)
 
 *Dernière mise à jour : Juin 2025*
 
