@@ -10,7 +10,7 @@
 [![Build Status](https://img.shields.io/github/actions/workflow/status/Lolemploi5/AndreeaFabian.fr/ci.yml?branch=main&style=flat-square&logo=github&label=Build)](https://github.com/Lolemploi5/AndreeaFabian.fr/actions)
 [![Tests](https://img.shields.io/badge/tests-28%20passed-brightgreen?style=flat-square&logo=vitest)](https://github.com/Lolemploi5/AndreeaFabian.fr/actions)
 [![Coverage](https://img.shields.io/badge/coverage-36%25-orange?style=flat-square&logo=codecov)](./coverage/index.html)
-[![Deploy](https://img.shields.io/github/deployments/Lolemploi5/AndreeaFabian.fr/production?style=flat-square&logo=vercel&label=Deploy)](https://github.com/Lolemploi5/AndreeaFabian.fr/deployments)
+[![Deploy](https://img.shields.io/badge/deploy-ready-brightgreen?style=flat-square&logo=rocket&label=Deploy)](https://andreeafabian.fr)
 
 <!-- Badges technologiques -->
 [![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)](https://vuejs.org/)
@@ -171,8 +171,8 @@ Le script `deploy.sh` génère tous les fichiers dans `dist/` :
 
 ### 📊 Couverture de Tests
 
-- **Tests unitaires** : 23 tests ✅
-- **Couverture** : 85% 
+- **Tests unitaires** : 28 tests ✅
+- **Couverture** : 36% 
 - **Composants** : 100% testés
 - **Views** : 80% testées
 
